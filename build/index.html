@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>vue swiper</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" href="http://cdn.ccwebsite.com/reset-css/1.2.2/mobile/reset.min.css" media="screen" title="no title" charset="utf-8">
+        <style media="screen">
+            .swiper img{
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+
+        </div>
+        <div id="wrapper2">
+
+        </div>
+        <div id="wrapper3">
+
+        </div>
+        <script type="text/vue-tmpl" id="tmpl">
+        <swiper v-bind:options="options" :list="list">
+            <slider v-for="item in list" track-by="$index" :options="options" slot="slider">
+                <a :href="item.href">
+                    <img v-lazyload="item.imgSrc" :src="'http://geekie.online/static/image/vue-swiper-demo/default.jpg'" >
+                </a>
+            </slider>
+            <pagination slot="pagination"></pagination>
+        </swiper>
+        </script>
+        <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="./vue-swiper.js"></script>
+        <script type="text/javascript" src="../node_modules/vue-lazyload-img/dist/vue.lazyimg.js"></script>
+        <script type="text/javascript">
+            Vue.use(Vue.lazyimg)
+            new Vue({
+                el: "#wrapper",
+                replace: false,
+                template: document.querySelector('#tmpl').innerHTML,
+                components: {
+                    'swiper': Swiper.carousel,
+                    'slider': Swiper.slider,
+                    'pagination': Swiper.pagination
+                },
+                data: {
+                    list: [{
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/1.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/2.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/3.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/4.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/5.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/6.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/7.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/8.jpg'
+                    }],
+                    options: {
+                        'autoPlay': false,
+                        'loop': true,
+                        'perSliders': 1,
+                        'pagination': true,
+                    }
+                }
+            })
+
+            new Vue({
+                el: "#wrapper2",
+                replace: false,
+                template: document.querySelector('#tmpl').innerHTML,
+                components: {
+                    'swiper': Swiper.scroller,
+                    'slider': Swiper.slider,
+                    'pagination': Swiper.pagination
+                },
+                data: {
+                    list: [{
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/1.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/2.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/3.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/4.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/5.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/6.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/7.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/8.jpg'
+                    }],
+                }
+            })
+
+            new Vue({
+                el: "#wrapper3",
+                replace: false,
+                template: document.querySelector('#tmpl').innerHTML,
+                components: {
+                    'swiper': Swiper.carousel,
+                    'slider': Swiper.slider,
+                    'pagination': Swiper.pagination
+                },
+                data: {
+                    list: [{
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/1.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/2.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/3.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/4.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/5.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/6.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/7.jpg'
+                    },
+                    {
+                        imgSrc: 'http://geekie.online/static/image/vue-swiper-demo/8.jpg'
+                    }],
+                    options: {
+                        'autoPlay': false,
+                        'loop': false,
+                        'perSliders': 2,
+                        'pagination': true,
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
