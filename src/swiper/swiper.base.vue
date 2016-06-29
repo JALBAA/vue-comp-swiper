@@ -50,7 +50,7 @@
                 //scroll dom event, for vue-lazyload-img(https://github.com/JALBAA/vue-lazyload-img)
                 scrollEvent: (function(){
                     var event = document.createEvent('HTMLEvents')
-                    event.initEvent('scroll')
+                    event.initEvent('scroll',true,false)
                     event.eventType = 'message'
                     return event
                 })(),
@@ -65,7 +65,6 @@
                 perSliders: 1,
                 perGroup: 1,
                 autoPlay: false,
-                pagination: true,
                 'height': 'auto'
             }
             this.options = this.options || defaultOptions
@@ -102,7 +101,7 @@
         },
         methods: {
             disableScreenScrollOnManipulating: function(){
-                let preventDefault = function(){
+                let preventDefault = function(e){
                     if(this.disableScreenScroll)
                         e.preventDefault()
                 }.bind(this)
@@ -182,7 +181,7 @@
                 this.$emit('transitionEnd',e)
                 //TODO optimize in future
                 var event = document.createEvent('HTMLEvents')
-                event.initEvent('scrollEnd')
+                event.initEvent('scrollEnd',true,false)
                 event.eventType = 'message'
                 window.dispatchEvent(event)
             }
@@ -201,6 +200,10 @@
             .slider {
                 flex-shrink: 0;
                 position: relative;
+                img {
+                    width: 100%;
+                    display: block;
+                }
             }
         }
     }

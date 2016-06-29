@@ -25,7 +25,6 @@
                 perSliders: 1,
                 perGroup: 1,
                 autoPlay: false,
-                pagination: true,
                 'height': 'auto'
             }
             this.options = this.options || defaultOptions

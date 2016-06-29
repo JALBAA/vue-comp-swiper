@@ -1,15 +1,12 @@
 var autoprefixer = require('autoprefixer');
 var webpack = require('webpack')
 module.exports = {
-    entry: "./test.vue",
+    entry: "./test.js",
     output: {
         path: __dirname,
         filename: "./test-build.js",
         library: ['Swiper'],
         libraryTarget: 'umd',
-    },
-    externals: {
-        vue: 'Vue',
     },
     module: {
         loaders: [
@@ -19,7 +16,8 @@ module.exports = {
             {
               test: /\.js$/, loader: 'babel-loader',
               query: {
-                presets: ['es2015']
+                presets: ['es2015'],
+                compact: false
               }
             }
         ]

@@ -81,7 +81,7 @@
                 this.autoPlay();
 
             //检测当前的索引值
-            let onIdxChange = function(){
+            let onIdxChange = function(idx){
                 this.$dispatch('idxChange',idx)
                 this.$broadcast('idxChange',idx)
             }.bind(this)

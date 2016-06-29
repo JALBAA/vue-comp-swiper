@@ -4,4 +4,4 @@ A swiper component for vue
 
 ## How to install?
 
-`npm install vue-swiper`
+`npm install vue-comp-swiper`
